@@ -21,7 +21,7 @@
 import os
 import globals as G
 
-from ConfigParser import ConfigParser
+from configparser import ConfigParser
 
 from gi.repository import Gtk
 from gi.repository import Gio
@@ -55,7 +55,7 @@ def get_pixbuf_from_path(path, size=62):
             return GdkPixbuf.Pixbuf.new_from_file_at_size(path, size, size)
 
         for tipo in types:
-            if tipo in G.IMAGES.keys():
+            if tipo in list(G.IMAGES.keys()):
                 return GdkPixbuf.Pixbuf.new_from_file_at_size(
                     G.IMAGES[tipo], size, size)
 
